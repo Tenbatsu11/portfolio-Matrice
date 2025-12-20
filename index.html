@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mat Pineau - Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="mediaqueries.css">
+</head>
+<body>
+    <nav  id="desktop-nav">
+        <div class="logo">Mat Pineau</div>
+        <div>
+            <ul class="nav-links">
+                <li><a href="#accueil">Accueil</a></li>
+                <li><a href="#projets">Projets</a></li>
+                <li><a href="#competences">Compétences</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+    <nav id="hamburger-nav">
+        <div class="logo">Mat Pineau</div>
+        <div class="hamburger-menu">
+            <div class="hamburger-icon" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <div class="menu-links">
+                <li><a href="#accueil" onclick="toggleMenu()">Accueil</a></li>
+                <li><a href="#projets" onclick="toggleMenu()">Projets</a></li>
+                <li><a href="#competences" onclick="toggleMenu()">Compétences</a></li>
+                <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
+            </div>
+        </div>
+    </nav>
+    <section id="hero">
+        <div class="section pic-container">
+            <img src="./assets/profile-pic.png" alt="jogh doe pp">
+        </div>
+        <div class="section__text">
+            <p>Bonjour, je suis</p>
+            <h1 class="title">Mat Pineau</h1>
+            <p class="section__text__p2">Développeur d'applications informatique junior</p>
+            <div class="button-container">
+                <button class="button button-color-2" onclick="window.open('./assets/CV Mat V2.pdf')">
+                    Télécharger mon CV
+                </button>
+            </div>
+            <div class="button-container">
+                <button class="button button-color-1" onclick="location.href='./contact'">
+                    Infos & Contact
+                </button>
+            </div>
+            <div id="socials-container">
+                <img src="./assets/linkedin-icon.png" alt="My LinkedIn" 
+                class="icon" onclick="window.open('https://www.linkedin.com/in/mat-pineau-4b8720234/')">
+            </div>
+        </div>
+    </section>
+    <script src="script.js"></script>
+</body>
+</html>
+
+
+/* 48:04 */
