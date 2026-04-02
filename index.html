@@ -1,76 +1,808 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mat Pineau - Portfolio</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="mediaqueries.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio BTS SIO SLAM</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <style>
+    :root {
+      --accent: #f97316;
+      /* Orange minimaliste */
+      cs --accent-hover: #ea580c;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #fdfdfd;
+      color: #333;
+    }
+
+    /* Custom Utilities */
+    .text-orange {
+      color: var(--accent) !important;
+    }
+
+    .bg-orange {
+      background-color: var(--accent) !important;
+      color: white;
+    }
+
+    .btn-orange {
+      background-color: var(--accent);
+      color: white;
+      border: none;
+      border-radius: 4px;
+      padding: 0.75rem 1.5rem;
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+
+    .btn-orange:hover {
+      background-color: var(--accent-hover);
+      color: white;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(249, 115, 22, 0.2);
+    }
+
+    .btn-outline-orange {
+      border: 2px solid var(--accent);
+      color: var(--accent);
+      border-radius: 4px;
+      padding: 0.7rem 1.5rem;
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+
+    .btn-outline-orange:hover {
+      background-color: var(--accent);
+      color: white;
+    }
+
+    .section-title {
+      font-weight: 800;
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+      color: #111;
+    }
+
+    .section-label {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.15rem;
+      color: var(--accent);
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+
+    /* Timeline styles */
+    .timeline {
+      border-left: 2px solid #eee;
+      padding-left: 1.5rem;
+      margin-left: 1rem;
+    }
+
+    .timeline-item {
+      position: relative;
+      margin-bottom: 2.5rem;
+    }
+
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      left: -2.1rem;
+      top: 0.3rem;
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      background-color: white;
+      border: 3px solid var(--accent);
+    }
+
+    /* Nav Tabs overrides */
+    .nav-pills .nav-link {
+      color: #555;
+      border-radius: 0;
+      border-bottom: 2px solid transparent;
+      padding: 0.5rem 1rem;
+      font-weight: 600;
+    }
+
+    .nav-pills .nav-link.active,
+    .nav-pills .nav-link:hover {
+      color: var(--accent);
+      background-color: transparent;
+      border-bottom: 2px solid var(--accent);
+    }
+
+    /* Progress bars */
+    .progress-bar-custom {
+      background-color: var(--accent);
+    }
+
+    /* Cards */
+    .custom-card {
+      border: 1px solid #f0f0f0;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      background: white;
+    }
+
+    .custom-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    }
+  </style>
 </head>
-<body>
-    <nav  id="desktop-nav">
-        <div class="logo">Mat Pineau</div>
-        <div>
-            <ul class="nav-links">
-                <li><a href="#accueil">Accueil</a></li>
-                <li><a href="#projets">Projets</a></li>
-                <li><a href="#competences">Compétences</a></li>
-                <li><a href="#contact">Contact</a></li>
+
+<body data-bs-spy="scroll" data-bs-target="#navbar" data-bs-offset="70">
+
+  <!-- Header / Navbar -->
+  <nav id="navbar" class="navbar navbar-expand-lg navbar-light bg-white sticky-top shadow-sm py-3">
+    <div class="container">
+      <a class="navbar-brand fw-bold fs-4" href="#">Port<span class="text-orange">folio</span></a>
+      <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav gap-3 text-uppercase" style="font-size: 0.85rem; font-weight: 600;">
+          <li class="nav-item"><a class="nav-link" href="#about">Profil</a></li>
+          <li class="nav-item"><a class="nav-link" href="#competences">Compétences</a></li>
+          <li class="nav-item"><a class="nav-link" href="#epreuves">Épreuves</a></li>
+          <li class="nav-item"><a class="nav-link" href="#projets">Projets</a></li>
+          <li class="nav-item"><a class="nav-link" href="#stages">Stages</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section id="hero" class="d-flex align-items-center"
+    style="min-height: 85vh; background: linear-gradient(135deg, #fff 0%, #f7f9fa 100%);">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-8">
+          <span class="badge bg-light text-orange border border-orange mb-3 py-2 px-3 rounded-pill text-uppercase"
+            style="letter-spacing: 0.1em; font-size: 0.75rem;">
+            <span class="d-inline-block rounded-circle bg-orange me-2" style="width: 8px; height: 8px;"></span> BTS SIO
+            · Option SLAM · 2025–2026
+          </span>
+          <h1 class="display-2 fw-bolder mb-3 text-dark" style="letter-spacing: -0.03em;">Mat <span
+              class="text-orange">Pineau</span></h1>
+          <h2 class="h3 fw-normal text-secondary mb-4">Développeur applicatif en formation</h2>
+          <p class="lead text-muted mb-5" style="max-width: 600px; font-size: 1.1rem;">
+            Étudiant en BTS Services Informatiques aux Organisations, option Solutions Logicielles et Applications
+            Métiers. Passionné par le développement web et applicatif, la conception de bases de données et
+            l'algorithmique.
+          </p>
+          <div class="d-flex gap-3 flex-wrap">
+            <a href="#projets" class="btn btn-orange">Voir mes projets</a>
+            <a href="#epreuves" class="btn btn-outline-orange">Tableau de synthèse</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Stats Row -->
+      <div class="row mt-5 pt-4 g-4" style="max-width: 800px;">
+        <div class="col-6 col-md-3">
+          <div class="text-center p-3 custom-card h-100">
+            <div class="fs-1 fw-bold text-orange">3</div>
+            <div class="text-muted text-uppercase small fw-semibold">Projets réalisés</div>
+          </div>
+        </div>
+        <div class="col-6 col-md-3">
+          <div class="text-center p-3 custom-card h-100">
+            <div class="fs-1 fw-bold text-orange">10</div>
+            <div class="text-muted text-uppercase small fw-semibold">Semaines stage</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="py-5 mt-4">
+    <div class="container">
+      <div class="section-label">01 — Profil</div>
+      <h2 class="section-title">À propos de moi</h2>
+      <p class="text-muted mb-5">Présentation personnelle et informations de contact.</p>
+
+      <div class="row g-5">
+        <div class="col-lg-7">
+          <p class="text-secondary lh-lg mb-4">
+            Actuellement en <strong>2ème année de BTS SIO option SLAM</strong>, je me forme aux métiers du développement
+            logiciel et applicatif. Mon parcours m'a permis d'acquérir des compétences solides en développement web
+            (front-end et back-end), en conception de bases de données relationnelles, ainsi qu'en algorithmique et
+            programmation orientée objet.
+          </p>
+          <p class="text-secondary lh-lg mb-4">
+            Au travers de mes stages et projets, j'ai pu mettre en pratique les compétences du référentiel BTS SIO au
+            sein d'environnements professionnels réels. Je suis particulièrement intéressé par le <strong
+              class="text-dark">développement d'applications web</strong> et l'<strong class="text-dark">intégration
+              d'API</strong>.
+          </p>
+          <p class="text-secondary lh-lg">
+            Curieux et autonome, j'assure une veille technologique régulière afin de rester informé des dernières
+            évolutions du secteur.
+          </p>
+        </div>
+        <div class="col-lg-5">
+          <div class="custom-card p-0 overflow-hidden">
+            <table class="table table-borderless m-0 text-secondary">
+              <tbody>
+                <tr class="border-bottom">
+                  <th class="bg-light w-25 py-3 ps-4 fw-medium text-uppercase" style="font-size: 0.75rem;">Nom</th>
+                  <td class="py-3 fw-semibold text-dark">Prénom NOM</td>
+                </tr>
+                <tr class="border-bottom">
+                  <th class="bg-light py-3 ps-4 fw-medium text-uppercase" style="font-size: 0.75rem;">Formation</th>
+                  <td class="py-3 text-dark">BTS SIO — SLAM</td>
+                </tr>
+                <tr class="border-bottom">
+                  <th class="bg-light py-3 ps-4 fw-medium text-uppercase" style="font-size: 0.75rem;">École</th>
+                  <td class="py-3 text-dark">Nom de l'établissement</td>
+                </tr>
+                <tr class="border-bottom">
+                  <th class="bg-light py-3 ps-4 fw-medium text-uppercase" style="font-size: 0.75rem;">Année</th>
+                  <td class="py-3 text-dark">2024 – 2026</td>
+                </tr>
+                <tr class="border-bottom">
+                  <th class="bg-light py-3 ps-4 fw-medium text-uppercase" style="font-size: 0.75rem;">Lieu</th>
+                  <td class="py-3 text-dark">Ville, France</td>
+                </tr>
+                <tr>
+                  <th class="bg-light py-3 ps-4 fw-medium text-uppercase" style="font-size: 0.75rem;">Dispo</th>
+                  <td class="py-3 fw-bold text-orange">Stage dès [date]</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Competences Section -->
+  <section id="competences" class="py-5 bg-light">
+    <div class="container">
+      <div class="section-label">02 — Compétences</div>
+      <h2 class="section-title">Stack technique</h2>
+      <p class="text-muted mb-5">Langages, frameworks et outils maîtrisés dans le cadre du BTS.</p>
+
+      <div class="row g-4">
+        <!-- Languages -->
+        <div class="col-md-6 col-lg-4">
+          <div class="custom-card p-4 h-100">
+            <h5 class="fw-bold mb-4 d-flex align-items-center">
+              <span class="d-inline-block rounded-circle bg-orange me-2" style="width: 8px; height: 8px;"></span>
+              Langages
+            </h5>
+            <div class="d-flex flex-wrap gap-2 mb-4">
+              <span class="badge bg-white text-dark border">PHP</span>
+              <span class="badge bg-white text-dark border">Java</span>
+              <span class="badge bg-white text-dark border">SQL</span>
+              <span class="badge bg-white text-dark border">HTML</span>
+              <span class="badge bg-white text-dark border">CSS</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Frameworks -->
+        <div class="col-md-6 col-lg-4">
+          <div class="custom-card p-4 h-100">
+            <h5 class="fw-bold mb-4 d-flex align-items-center">
+              <span class="d-inline-block rounded-circle bg-info me-2" style="width: 8px; height: 8px;"></span>
+              Frameworks
+            </h5>
+            <div class="d-flex flex-wrap gap-2 mb-4">
+              <span class="badge bg-white text-dark border">Symfony</span>
+              <span class="badge bg-white text-dark border">Bootstrap</span>
+              <span class="badge bg-white text-dark border">SpringBoot</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Databases -->
+        <div class="col-md-6 col-lg-4">
+          <div class="custom-card p-4 h-100">
+            <h5 class="fw-bold mb-4 d-flex align-items-center">
+              <span class="d-inline-block rounded-circle bg-warning me-2" style="width: 8px; height: 8px;"></span> Bases
+              de données
+            </h5>
+            <div class="d-flex flex-wrap gap-2 mb-4">
+              <span class="badge bg-white text-dark border">MySQL</span>
+              <span class="badge bg-white text-dark border">PostgreSQL</span>
+              <span class="badge bg-white text-dark border">MariaDB</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tools -->
+        <div class="col-md-6 col-lg-4">
+          <div class="custom-card p-4 h-100">
+            <h5 class="fw-bold mb-4 d-flex align-items-center">
+              <span class="d-inline-block rounded-circle bg-secondary me-2" style="width: 8px; height: 8px;"></span>
+              Outils / Env.
+            </h5>
+            <div class="d-flex flex-wrap gap-2">
+              <span class="badge bg-white text-dark border">Git / GitHub</span>
+              <span class="badge bg-white text-dark border">VS Code</span>
+              <span class="badge bg-white text-dark border">Docker</span>
+              <span class="badge bg-white text-dark border">Windows</span>
+              <span class="badge bg-white text-dark border">MacOS</span>
+              <span class="badge bg-white text-dark border">Linux</span>
+              <span class="badge bg-white text-dark border">Postman</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Security -->
+        <div class="col-md-6 col-lg-4">
+          <div class="custom-card p-4 h-100">
+            <h5 class="fw-bold mb-4 d-flex align-items-center">
+              <span class="d-inline-block rounded-circle bg-danger me-2" style="width: 8px; height: 8px;"></span>
+              Sécurité & Réseaux
+            </h5>
+            <div class="d-flex flex-wrap gap-2">
+              <span class="badge bg-white text-dark border">JWT</span>
+              <span class="badge bg-white text-dark border">HTTPS/TLS</span>
+              <span class="badge bg-white text-dark border">Pare-feu</span>
+              <span class="badge bg-white text-dark border">VPN</span>
+              <span class="badge bg-white text-dark border">TCP/IP</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Methods -->
+        <div class="col-md-6 col-lg-4">
+          <div class="custom-card p-4 h-100">
+            <h5 class="fw-bold mb-4 d-flex align-items-center">
+              <span class="d-inline-block rounded-circle bg-success me-2" style="width: 8px; height: 8px;"></span>
+              Méthodes
+            </h5>
+            <div class="d-flex flex-wrap gap-2">
+              <span class="badge bg-white text-dark border">Agile / Scrum</span>
+              <span class="badge bg-white text-dark border">UML</span>
+              <span class="badge bg-white text-dark border">Recette / Tests</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Epreuves Section -->
+  <section id="epreuves" class="py-5">
+    <div class="container">
+      <div class="section-label">03 — Épreuves</div>
+      <h2 class="section-title">Tableau de synthèse</h2>
+      <p class="text-muted mb-5">Activités types couvrant les compétences du référentiel BTS SIO SLAM.</p>
+
+      <ul class="nav nav-pills mb-4 border-bottom pb-2" id="epreuves-tab" role="tablist">
+        <li class="nav-item" role="presentation">
+          <button class="nav-link text-uppercase fs-6 active" id="e4-tab" data-bs-toggle="pill" data-bs-target="#e4"
+            type="button" role="tab" aria-controls="e4" aria-selected="true">E4 — Support & Services</button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link text-uppercase fs-6" id="e5-tab" data-bs-toggle="pill" data-bs-target="#e5"
+            type="button" role="tab" aria-controls="e5" aria-selected="false">E5 — Projet Informatique</button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link text-uppercase fs-6" id="e6-tab" data-bs-toggle="pill" data-bs-target="#e6"
+            type="button" role="tab" aria-controls="e6" aria-selected="false">E6 — Cybersécurité</button>
+        </li>
+      </ul>
+
+      <div class="tab-content" id="epreuves-tabContent">
+        <!-- E4 Panel -->
+        <div class="tab-pane fade show active" id="e4" role="tabpanel" aria-labelledby="e4-tab">
+          <div class="row g-4">
+            <!-- B1.1 -->
+            <div class="col-12">
+              <div class="custom-card">
+                <div class="card-header bg-light d-flex justify-content-between align-items-center py-3 border-bottom">
+                  <div>
+                    <span class="fw-bold text-orange me-2">E4 — B1.1</span>
+                    <span class="fw-bold">Gestion du patrimoine informatique</span>
+                  </div>
+                  <span class="badge bg-warning text-dark">En cours</span>
+                </div>
+                <ul class="list-group list-group-flush text-secondary small">
+                  <li class="list-group-item d-flex justify-content-between align-items-start py-3">
+                    <div><span class="badge bg-light text-dark border me-2">AT1</span> Recenser et identifier les
+                      ressources numériques</div>
+                    <span class="badge bg-light text-muted border fst-italic cursor-pointer">+ preuve</span>
+                  </li>
+                  <li class="list-group-item d-flex justify-content-between align-items-start py-3">
+                    <div><span class="badge bg-light text-dark border me-2">AT5</span> Gérer des sauvegardes</div>
+                    <span class="badge bg-orange border fst-italic cursor-pointer">✓ preuve</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <!-- B1.2 -->
+            <div class="col-12">
+              <div class="custom-card">
+                <div class="card-header bg-light d-flex justify-content-between align-items-center py-3 border-bottom">
+                  <div>
+                    <span class="fw-bold text-orange me-2">E4 — B1.2</span>
+                    <span class="fw-bold">Répondre aux incidents et aux demandes...</span>
+                  </div>
+                  <span class="badge bg-warning text-dark">En cours</span>
+                </div>
+                <ul class="list-group list-group-flush text-secondary small">
+                  <li class="list-group-item d-flex justify-content-between align-items-start py-3">
+                    <div><span class="badge bg-light text-dark border me-2">AT1</span> Collecter, suivre et orienter des
+                      demandes</div>
+                    <span class="badge bg-light text-muted border fst-italic cursor-pointer">+ preuve</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- E5 Panel -->
+        <div class="tab-pane fade" id="e5" role="tabpanel" aria-labelledby="e5-tab">
+          <div class="row g-4">
+            <div class="col-12">
+              <div class="custom-card">
+                <div class="card-header bg-light d-flex justify-content-between align-items-center py-3 border-bottom">
+                  <div>
+                    <span class="fw-bold text-orange me-2">E5 — B2.1</span>
+                    <span class="fw-bold">Concevoir et développer une solution applicative</span>
+                  </div>
+                  <span class="badge bg-warning text-dark">En cours</span>
+                </div>
+                <ul class="list-group list-group-flush text-secondary small">
+                  <li class="list-group-item d-flex justify-content-between align-items-start py-3">
+                    <div><span class="badge bg-light text-dark border me-2">AT4</span> Réaliser les modules applicatifs
+                      d'une solution applicative</div>
+                    <span class="badge bg-orange border fst-italic cursor-pointer">✓ preuve</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="col-12">
+              <div class="custom-card">
+                <div class="card-header bg-light d-flex justify-content-between align-items-center py-3 border-bottom">
+                  <div>
+                    <span class="fw-bold text-orange me-2">E5 — B2.3</span>
+                    <span class="fw-bold">Gérer les données</span>
+                  </div>
+                  <span class="badge bg-success">Validé</span>
+                </div>
+                <ul class="list-group list-group-flush text-secondary small">
+                  <li class="list-group-item d-flex justify-content-between align-items-start py-3">
+                    <div><span class="badge bg-light text-dark border me-2">AT1</span> Concevoir ou adapter une base de
+                      données</div>
+                    <span class="badge bg-orange border fst-italic cursor-pointer">✓ preuve</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- E6 Panel -->
+        <div class="tab-pane fade" id="e6" role="tabpanel" aria-labelledby="e6-tab">
+          <div class="alert alert-light border text-center py-5">
+            Composantes Cybersécurité - section en cours de construction.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projets Section -->
+  <section id="projets" class="py-5 bg-light">
+    <div class="container">
+      <div class="section-label">04 — Réalisations</div>
+      <h2 class="section-title">Projets</h2>
+      <p class="text-muted mb-5">Applications et sites web développés dans le cadre de la formation et des stages.</p>
+
+      <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+
+        <!-- Project 1 -->
+        <div class="col">
+          <div class="custom-card h-100 d-flex flex-column">
+            <div class="bg-dark text-white d-flex align-items-center justify-content-center p-5 rounded-top"
+              style="height: 180px;">
+              <span class="display-3">🛒</span>
+            </div>
+            <div class="card-body p-4 d-flex flex-column">
+              <h6 class="text-orange text-uppercase fw-bold" style="font-size: 0.75rem;">App Web - Kumiai Go Learn</h6>
+              <h5 class="card-title fw-bold mb-3">Kumiai Go Learn</h5>
+              <p class="card-text text-secondary small mb-4 flex-grow-1">Application web d'apprentissage du Japonais en
+                lien avec le développement en cours du jeu Kumiai Go annoncé sur : <a
+                  href="https://kumiai.sukai.moe/fr/kumiai-go/"
+                  target="_blank">https://kumiai.sukai.moe/fr/kumiai-go/</a>
+              </p>
+              <div class="d-flex flex-wrap gap-1 mb-4">
+                <span class="badge bg-light border text-dark">PHP</span>
+                <span class="badge bg-light border text-info">Bootstrap</span>
+                <span class="badge bg-light border text-warning">MySQL</span>
+              </div>
+              <div class="d-flex justify-content-between align-items-center border-top pt-3 mt-auto small text-muted">
+                <span>Stage Septembre 2025</span>
+                <a href="https://github.com/Tenbatsu11/siteweb" class="text-orange text-decoration-none fw-bold">GitHub
+                  →</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 2 -->
+        <div class="col">
+          <div class="custom-card h-100 d-flex flex-column">
+            <div class="bg-secondary text-white d-flex align-items-center justify-content-center p-5 rounded-top"
+              style="height: 180px;">
+              <span class="display-3">📊</span>
+            </div>
+            <div class="card-body p-4 d-flex flex-column">
+              <h6 class="text-orange text-uppercase fw-bold" style="font-size: 0.75rem;">App Desktop - Kumiai Go Learn
+                Desktop</h6>
+              <h5 class="card-title fw-bold mb-3">Kumiai Go Learn Desktop</h5>
+              <p class="card-text text-secondary small mb-4 flex-grow-1">Application de bureau d'apprentissage du
+                Japonais
+                en
+                lien avec le développement en cours du jeu Kumiai Go annoncé sur : <a
+                  href="https://kumiai.sukai.moe/fr/kumiai-go/"
+                  target="_blank">https://kumiai.sukai.moe/fr/kumiai-go/</a>
+                <br>
+                Cette application ne permet pas d'accéder aux fonctionnalitées du forum qui sont réservées uniquement au
+                site web, mais donne accès au jeu Kumiai Go RPG qui est en cours de développement en parallèle ( <a
+                  href="#projet3">Projet 3</a>).
+              </p>
+              <div class="d-flex flex-wrap gap-1 mb-4">
+                <span class="badge bg-light border text-danger">Java</span>
+                <span class="badge bg-light border text-secondary">SpringBoot</span>
+                <span class="badge bg-light border text-dark">Hibernate</span>
+                <span class="badge bg-light border text-dark">JWT</span>
+                <span class="badge bg-light border text-dark">MySQL</span>
+                <span class="badge bg-light border text-dark">Maven</span>
+              </div>
+              <div class="d-flex justify-content-between align-items-center border-top pt-3 mt-auto small text-muted">
+                <span>Stage Février 2026</span>
+                <a href="https://github.com/Tenbatsu11/Kumiai-Go-Learn-Dekstop"
+                  class="text-orange text-decoration-none fw-bold">GitHub Application →</a>
+                <hr>
+                <a href="https://github.com/Tenbatsu11/kumiai-rpg-api"
+                  class="text-orange text-decoration-none fw-bold">GitHub API →</a>
+
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 3 -->
+        <div class="col">
+          <div class="custom-card h-100 d-flex flex-column">
+            <div class="bg-secondary text-white d-flex align-items-center justify-content-center p-5 rounded-top"
+              style="height: 180px;">
+              <span class="display-3">📊</span>
+            </div>
+            <div class="card-body p-4 d-flex flex-column">
+              <h6 class="text-orange text-uppercase fw-bold" style="font-size: 0.75rem;">Application Jeu RPG - Kumiai Go
+                RPG</h6>
+              <h5 class="card-title fw-bold mb-3">Kumiai Go RPG</h5>
+              <p class="card-text text-secondary small mb-4 flex-grow-1">Application de jeu de rôle en lien avec le
+                développement en cours du jeu Kumiai Go annoncé sur : <a href="https://kumiai.sukai.moe/fr/kumiai-go/"
+                  target="_blank">https://kumiai.sukai.moe/fr/kumiai-go/</a>
+                <br>
+                Cette application permet d'accéder au jeu Kumiai Go RPG qui est en cours de développement en parallèle (
+                <a href="#projet2">Projet 2</a>).
+              </p>
+              <div class="d-flex flex-wrap gap-1 mb-4">
+                <span class="badge bg-light border text-danger">Java</span>
+              </div>
+              <div class="d-flex justify-content-between align-items-center border-top pt-3 mt-auto small text-muted">
+                <span>1ère année · 2024</span>
+                <a href="https://github.com/Tenbatsu11/Kumiai_Go_RPG"
+                  class="text-orange text-decoration-none fw-bold">GitHub →</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Stages Section -->
+  <section id="stages" class="py-5">
+    <div class="container">
+      <div class="section-label">05 — Expérience</div>
+      <h2 class="section-title">Stages en entreprise</h2>
+      <p class="text-muted mb-5">Périodes de formation en milieu professionnel (PFMP).</p>
+
+      <div class="timeline mt-4">
+
+        <!-- Stage 2 -->
+        <div class="timeline-item">
+          <div class="mb-1 text-orange fw-bold"
+            style="font-size: 0.85rem; letter-spacing: 0.05em; text-transform: uppercase;">Avril – Juin 2025 (10
+            semaines)</div>
+          <h4 class="fw-bold mb-1">Nom de l'entreprise #2</h4>
+          <div class="text-muted small mb-3">Développeur applicatif stagiaire — Ville, France</div>
+
+          <div class="custom-card p-4">
+            <ul class="text-secondary small mb-4" style="line-height:1.8;">
+              <li>Développement d'une fonctionnalité de gestion avec PHP/Symfony</li>
+              <li>Conception du MCD et création de la base de données MySQL</li>
+              <li>Rédaction de la documentation technique et du guide utilisateur</li>
+              <li>Participation aux réunions de suivi en méthode Agile (daily Scrum)</li>
+              <li>Réalisation de tests unitaires et fonctionnels</li>
             </ul>
-        </div>
-    </nav>
-    <nav id="hamburger-nav">
-        <div class="logo">Mat Pineau</div>
-        <div class="hamburger-menu">
-            <div class="hamburger-icon" onclick="toggleMenu()">
-                <span></span>
-                <span></span>
-                <span></span>
+            <div class="d-flex flex-wrap gap-2 pt-2 border-top">
+              <span class="badge bg-light border text-dark">PHP</span>
+              <span class="badge bg-light border text-info">Symfony</span>
+              <span class="badge bg-light border text-warning">MySQL</span>
+              <span class="badge bg-light border text-dark">Git</span>
+              <span class="badge bg-light border text-dark">Agile</span>
             </div>
-            <div class="menu-links">
-                <li><a href="#accueil" onclick="toggleMenu()">Accueil</a></li>
-                <li><a href="#projets" onclick="toggleMenu()">Projets</a></li>
-                <li><a href="#competences" onclick="toggleMenu()">Compétences</a></li>
-                <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
-            </div>
+          </div>
         </div>
-    </nav>
-    <section id="profile">
-        <div class="section__pic-container">
-            <img src="./assets/profile-pic.png" alt="jonh doe pp">
-        </div>
-        <div class="section__text">
-            <p class="section__text__p1">Bonjour, je suis</p>
-            <h1 class="title">Mat Pineau</h1>
-            <p class="section__text__p2">Développeur d'applications informatique junior</p>
-            <div class="btn-container">
-                <button class="btn btn-color-2" onclick="window.open('./assets/CV Mat V2.pdf')">
-                    Télécharger mon CV
-                </button>
-                <button class="btn btn-color-1" onclick="location.href='./#contact'">
-                    Infos & Contact
-                </button>
+
+        <!-- Stage 1 -->
+        <div class="timeline-item">
+          <div class="mb-1 text-orange fw-bold"
+            style="font-size: 0.85rem; letter-spacing: 0.05em; text-transform: uppercase;">Novembre – Décembre 2024 (6
+            semaines)</div>
+          <h4 class="fw-bold mb-1">Nom de l'entreprise #1</h4>
+          <div class="text-muted small mb-3">Développeur web stagiaire — Ville, France</div>
+
+          <div class="custom-card p-4">
+            <ul class="text-secondary small mb-4" style="line-height:1.8;">
+              <li>Développement et maintenance de pages web en HTML/CSS/JS</li>
+              <li>Participation à la migration d'un site sous CMS</li>
+              <li>Rédaction de requêtes SQL pour extraction et analyse de données</li>
+              <li>Support et assistance aux utilisateurs (helpdesk niveau 1)</li>
+            </ul>
+            <div class="d-flex flex-wrap gap-2 pt-2 border-top">
+              <span class="badge bg-light border text-dark">HTML/CSS</span>
+              <span class="badge bg-light border text-warning">JS</span>
+              <span class="badge bg-light border text-info">SQL</span>
+              <span class="badge bg-light border text-dark">WordPress</span>
             </div>
-            <div id="socials-container">
-                <img src="./assets/linkedin.png" alt="My LinkedIn" 
-                class="icon" onclick="window.open('https://www.linkedin.com/in/matpineau/')">
-                <img src="./assets/github.png" alt="My GitHub" 
-                class="icon" onclick="window.open('https://github.com/Tenbatsu11')">
-            </div>
+          </div>
         </div>
-    </section>
-    <section id="about">
-        <p class="section__text__p1">Apprenez-en plus sur moi</p>
-        <h1 class="title">À propos de moi</h1>
-        <div class="section-container">
-            <div class="pic-container">
-                <img src="./assets/about-pic.png" alt="Profile Picture" class="about-pic">
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Certifications & Veille -->
+  <section class="py-5 bg-light">
+    <div class="container">
+      <div class="row g-5">
+
+        <!-- Veille Tech -->
+        <div class="col-lg-6" id="veille">
+          <div class="section-label">07 — Veille</div>
+          <h2 class="section-title h3">Veille technologique</h2>
+          <p class="text-muted mb-4 small">Suivi des évolutions technologiques du domaine.</p>
+
+          <div class="d-flex flex-column gap-3">
+            <div class="custom-card p-4 border-start border-warning border-4">
+              <div class="text-muted small mb-1">Mars 2025</div>
+              <h6 class="fw-bold">Titre de l'article / sujet #1</h6>
+              <p class="text-secondary small mb-0 mt-2">Résumé de la veille : décrire brièvement le sujet, son
+                importance et les implications pour le domaine du développement applicatif.</p>
             </div>
+
+            <div class="custom-card p-4 border-start border-warning border-4">
+              <div class="text-muted small mb-1">Janvier 2025</div>
+              <h6 class="fw-bold">Titre de l'article / sujet #2</h6>
+              <p class="text-secondary small mb-0 mt-2">Résumé de la veille : décrire brièvement le sujet, son
+                importance et les implications pour le domaine du développement applicatif.</p>
+            </div>
+          </div>
         </div>
-    </section>
-    <script src="script.js"></script>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="py-5 text-white" style="background-color: #111;">
+    <div class="container py-4">
+      <div class="row g-5">
+        <div class="col-lg-5">
+          <div class="section-label">08 — Contact</div>
+          <h2 class="section-title text-white">Me contacter</h2>
+          <p class="text-secondary mb-4">Pour toute opportunité de stage, projet ou collaboration.</p>
+
+          <ul class="list-unstyled d-flex flex-column gap-3">
+            <li>
+              <a href="mailto:prenom.nom@email.fr"
+                class="text-decoration-none text-white d-flex align-items-center gap-3 p-3 border border-secondary rounded hover-bg-dark">
+                <span class="fs-5 text-orange">✉</span> prenom.nom@email.fr
+              </a>
+            </li>
+            <li>
+              <a href="https://github.com/pseudo"
+                class="text-decoration-none text-white d-flex align-items-center gap-3 p-3 border border-secondary rounded hover-bg-dark">
+                <span class="fs-5 text-orange">⌥</span> github.com/pseudo
+              </a>
+            </li>
+            <li>
+              <a href="https://linkedin.com/in/pseudo"
+                class="text-decoration-none text-white d-flex align-items-center gap-3 p-3 border border-secondary rounded hover-bg-dark">
+                <span class="fs-5 text-orange">in</span> linkedin.com/in/pseudo
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="col-lg-7">
+          <div class="bg-dark p-4 p-md-5 rounded border border-secondary">
+            <form>
+              <div class="row g-3">
+                <div class="col-md-6">
+                  <label class="form-label text-secondary small text-uppercase fw-bold">Nom</label>
+                  <input type="text" class="form-control bg-transparent text-white border-secondary"
+                    placeholder="Votre nom">
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label text-secondary small text-uppercase fw-bold">E-mail</label>
+                  <input type="email" class="form-control bg-transparent text-white border-secondary"
+                    placeholder="votre@email.fr">
+                </div>
+                <div class="col-12">
+                  <label class="form-label text-secondary small text-uppercase fw-bold">Message</label>
+                  <textarea class="form-control bg-transparent text-white border-secondary" rows="5"
+                    placeholder="Votre message..."></textarea>
+                </div>
+                <div class="col-12 mt-4">
+                  <button type="button" class="btn btn-orange w-100"
+                    onclick="alert('Pensez à configurer un backend pour envoyer des emails.')">Envoyer le
+                    message</button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-black text-secondary py-4 text-center small">
+    <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center gap-2">
+      <span>© 2025 · Prénom NOM · Portfolio BTS SIO SLAM</span>
+      <span>Fait avec <span class="text-orange">♥</span> — Tous droits réservés</span>
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script>
+    // Script minimaliste pour changer le mode de certification et gérer l'interactivité basique
+    document.querySelectorAll('.at-proof, .cursor-pointer').forEach(btn => {
+      btn.addEventListener('click', function () {
+        if (this.textContent.includes('+ preuve')) {
+          this.classList.remove('bg-light', 'text-muted');
+          this.classList.add('bg-orange', 'text-white');
+          this.textContent = '✓ preuve';
+        }
+      });
+    });
+  </script>
+
 </body>
+
 </html>
-
-
---- 1h03 ---
