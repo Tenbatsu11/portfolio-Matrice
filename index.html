@@ -235,7 +235,7 @@
           </p>
           <p class="text-secondary lh-lg">
             Curieux et autonome, j'assure une veille technologique régulière afin de rester informé des dernières
-            évolutions du secteur.
+            évolutions du secteur. Tout particulièrement sur les enjeux de l'IA et l'évolution du métier de développeur dans les années à venir.
           </p>
         </div>
         <div class="col-lg-5">
@@ -384,7 +384,7 @@
   <section id="epreuves" class="py-5">
     <div class="container">
       <div class="section-label">03 — Épreuves</div>
-      <h2 class="section-title">Tableau de synthèse</h2>
+      <h2 class="section-title">Tableau de synthèse des compétences mise en œuvre</h2>
       <p class="text-muted mb-5">Activités types couvrant les compétences du référentiel BTS SIO SLAM.</p>
 
       <ul class="nav nav-pills mb-4 border-bottom pb-2" id="epreuves-tab" role="tablist">
@@ -410,17 +410,12 @@
                     <span class="fw-bold text-orange me-2">E5 — B1.1</span>
                     <span class="fw-bold">Gestion du patrimoine informatique</span>
                   </div>
-                  <span class="badge bg-warning text-dark">En cours</span>
+                  <span class="badge bg-success">Validé</span>
                 </div>
                 <ul class="list-group list-group-flush text-secondary small">
                   <li class="list-group-item d-flex justify-content-between align-items-start py-3">
-                    <div><span class="badge bg-light text-dark border me-2">AT1</span> Recenser et identifier les
-                      ressources numériques</div>
-                    <span class="badge bg-light text-muted border fst-italic cursor-pointer">+ preuve</span>
-                  </li>
-                  <li class="list-group-item d-flex justify-content-between align-items-start py-3">
-                    <div><span class="badge bg-light text-dark border me-2">AT5</span> Gérer des sauvegardes</div>
-                    <span class="badge bg-orange border fst-italic cursor-pointer">✓ preuve</span>
+                    <div><span class="badge bg-light text-dark border me-2">GLPI</span>Installation, configuration et gestion d'incidents avec GLPI dans une VM Ubuntu </div>
+                    <button href="GLPI.html" class="badge bg-light text-muted border fst-italic cursor-pointer">Voir</button>
                   </li>
                 </ul>
               </div>
@@ -457,7 +452,7 @@
                     <span class="fw-bold text-orange me-2">E6 — B2.1</span>
                     <span class="fw-bold">Concevoir et développer une solution applicative</span>
                   </div>
-                  <span class="badge bg-warning text-dark">En cours</span>
+                  <span class="badge bg-success">Validé</span>
                 </div>
                 <ul class="list-group list-group-flush text-secondary small">
                   <li class="list-group-item d-flex justify-content-between align-items-start py-3">
@@ -593,7 +588,7 @@
                 Cette application a pour but de développer mes capacités en développement d'application et particulièrement de programmation d'un jeu vidéo de par mon implication
                 auprès de l'équipe de développement de l'entreprise Sukai SAS qui développe le jeu Kumiai Go. Dès lors, celle-ci rentre dans le cadre de l'option d'engagement professionnel du BTS SIO SLAM.
                 Elle s'engage dans un processus créatif et d'intégration à l'histoire du jeu Kumiai Go en développant une feature supplémentaire au jeu : un RPG accessible depuis l'application desktop d'apprentissage du Japonais (Projet 2) et 
-                permettant de mettre en valeur l'expérience de création du jeu d'apprentissage du japonais Kumiai Go au travers du RPG que je développe.
+                permettant de mettre en valeur l'expérience de création du jeu d'apprentissage du japonais Kumiai Go, au travers du RPG que je développe.
               </p>
               <div class="d-flex flex-wrap gap-1 mb-4">
                 <span class="badge bg-light border text-danger">Java</span>
@@ -778,19 +773,6 @@
 
   <!-- Bootstrap JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-
-  <script>
-    // Script minimaliste pour changer le mode de certification et gérer l'interactivité basique
-    document.querySelectorAll('.at-proof, .cursor-pointer').forEach(btn => {
-      btn.addEventListener('click', function () {
-        if (this.textContent.includes('+ preuve')) {
-          this.classList.remove('bg-light', 'text-muted');
-          this.classList.add('bg-orange', 'text-white');
-          this.textContent = '✓ preuve';
-        }
-      });
-    });
-  </script>
 
 </body>
 
