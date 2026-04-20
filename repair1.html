@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Projet GLPI - Portfolio</title>
+  <title>Projet Maintenance et réparation - Portfolio</title>
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -142,12 +142,12 @@
         <div class="col-lg-8">
           <span class="badge bg-light text-orange border border-orange mb-3 py-2 px-3 rounded-pill text-uppercase"
             style="letter-spacing: 0.1em; font-size: 0.75rem;">
-            <span class="d-inline-block rounded-circle bg-orange me-2" style="width: 8px; height: 8px;"></span> Projet / E5 / GLPI
+            <span class="d-inline-block rounded-circle bg-orange me-2" style="width: 8px; height: 8px;"></span> Projet / E5 / Gérer le patrimoine informatique, répondre aux incidents et assurer une assistance à distance
           </span>
-          <h1 class="display-3 fw-bolder mb-3 text-dark" style="letter-spacing: -0.03em;">Mise en place de <span
-              class="text-orange">GLPI</span></h1>
+          <h1 class="display-3 fw-bolder mb-3 text-dark" style="letter-spacing: -0.03em;">Réparation et assistance à distance d'un PC<span
+              class="text-orange">Windows 11</span></h1>
           <p class="lead text-muted mb-5" style="max-width: 600px; font-size: 1.1rem;">
-            Gestion Libre de Parc Informatique : installation, configuration, inventaire réseau et gestion des incidents (Helpdesk) dans le cadre du BTS SIO.
+            Réparation et assistance à distance d'un PC Windows 11, résolution d'un problème de démarrage.
           </p>
           <div class="d-flex gap-3 flex-wrap">
             <a href="index.html" class="btn btn-outline-orange">← Retour au portfolio</a>
@@ -163,36 +163,30 @@
       <div class="row">
         <!-- Content in a Central Column -->
         <div class="col-lg-10 mx-auto">
-          
-          <div class="section-label text-center">Contexte</div>
+            <div class="section-label text-center">Contexte</div>
           <h2 class="section-title h3 mb-4 text-center">Présentation du projet</h2>
           <p class="text-secondary lh-lg mb-4 text-center mx-auto" style="max-width: 800px;">
-            Dans le cadre de ma formation en BTS, j'ai pu mettre en place un serveur GLPI pour permettre la gestion d'un parc informatique le plus complet possible. Pour ce faire lors de l'installation, j'ai dû installer une base de données MySQL, un serveur Apache et PHP. J'ai ensuite installé GLPI et configuré les différents éléments pour que le serveur puisse fonctionner correctement. 
-            Enfin, j'ai testé le serveur pour m'assurer qu'il fonctionne correctement et que les utilisateurs peuvent accéder à l'interface de gestion du parc informatique sans problème.
-            Tout ceci dans un environnement de travail virtuel, en utilisant des machines virtuelles pour simuler un réseau d'entreprise et tester les fonctionnalités de GLPI dans un contexte réaliste. 
-            En l'occurence, deux logiciels furent utilisés. VMware Workstation qui est gratuit depuis 2024 pour une utilisation personnelle et qui m'aura permis de créer une machine client Ubuntu sous le nom de Mme Marc sur GLPI.
-            Mais aussi VirtualBox qui m'aura permis de créer une machine serveur Ubuntu pour héberger GLPI et gérer les communications entre machines via des accès par pont réseau. Avant d'avoir pu faire les connections par pont, j'ai d'abord tester sur un accès NAT transfert de port ( en l'occurence les ports 80 et 62354 de GLPI)
-            pour m'assurer que le serveur GLPI était bien accessible depuis la machine cliente. Une fois que j'ai confirmé que le serveur fonctionnait correctement et que les machines pouvaient communiquer entre elles, j'ai configuré les accès par pont pour permettre une communication plus fluide et réaliste entre les machines virtuelles, simulant ainsi un environnement de travail d'entreprise plus authentique.
-            Enfin, il ne restait plus qu'à configurer les différents utilisateurs, c'est à dire Mme Marc qui est une utilisatrice standard et Technic John qui est un technicien de support informatique, pour qu'ils puissent accéder à GLPI et utiliser les différentes fonctionnalités de gestion du parc informatique et de support technique.
+            Pendant mon année de BTS et mon stage, j'ai pu rentrer en contact avec plusieurs des membres de l'équipe de développement de Sukai SAS mais aussi une connaissance proche qui faisait parti de l'équipe dédiée à l'élaboration des cours de leur application en cours de développement.
+            De ce fait une certaine proximité retranscrit dans les échanges pedant la maintenance peut être observé. 
           </p>
           <p class="text-secondary lh-lg mb-5 text-center mx-auto" style="max-width: 800px;">
-            Pour la première phase d'initialisation du client GLPI, j'ai activé <strong>FusionInventory</strong> pour permettre l'inventaire automatique du parc informatique. J'ai ensuite configuré les règles d'inventaire pour que les équipements soient correctement catégorisés et organisés dans GLPI par type d'équipement, emplacement, et autres critères pertinents.
+            Le cas abordé pendant cette maintenance est celui d'un PC qui s'allume mais ne démarre pas, ce qui peut être causé par divers problèmes matériels ou logiciels. L'objectif de ce projet est de diagnostiquer et de résoudre ce problème afin de restaurer le bon fonctionnement du PC.
             <br><br>
-            Ensuite lors des Travaux Pratiques, j'ai utilisé GLPI pour gérer les demandes d'assistance des utilisateurs, suivre les incidents et les problèmes, et planifier les interventions de maintenance. Pour ce faire, j'ai créé des tickets pour les différentes demandes d'assistance, assigné des techniciens pour résoudre les problèmes, et suivi l'avancement des interventions jusqu'à leur résolution.
+            Le projet se déroulera en plusieurs étapes, notamment l'identification du problème, la recherche de solutions potentielles, la mise en œuvre de la solution choisie et la vérification du bon fonctionnement du PC après la réparation.
           </p>
 
           <div class="section-label text-center mt-5 pt-3">Cas Pratique</div>
-          <h2 class="section-title h3 mb-5 text-center">Flux de résolution d'un ticket</h2>
-          
-          <!-- CENTRAL BUBBLE FOR STEPS -->
+          <h2 class="section-title h3 mb-5 text-center">Réparation de panne PC : le pc s'allume mais ne démarre pas</h2>
+
+           <!-- CENTRAL BUBBLE FOR STEPS -->
           <div class="custom-card p-4 p-md-5 mb-5 shadow-sm">
             
             <!-- Context -->
             <div class="text-center mb-5">
               <h5 class="fw-bold mb-3 d-inline-block px-4 py-2 bg-light rounded-pill border text-orange">Demande d'assistance</h5>
               <div class="bg-light border rounded p-4 mx-auto text-start" style="max-width: 650px;">
-                <p class="text-dark mb-2"><strong>Titre du ticket :</strong> Application ne répond pas</p>
-                <p class="text-secondary mb-0"><strong>Description :</strong> L'utilisateur signale que l'application WinCompta ne répond plus et demande une assistance pour résoudre le problème.</p>
+                <p class="text-dark mb-2"><strong>L'ordinateur s'allume mais ne démarre pas</strong> </p>
+                <p class="text-secondary mb-0"><strong>Description :</strong> L'utilisateur signale que le PC s'allume mais ne démarre pas. Les lumières du clavier sont présentes mais l'écran reste noir et le ventilateur ne tourne pas.</p>
               </div>
             </div>
 
@@ -200,36 +194,47 @@
 
             <!-- Etape 1 -->
             <div class="text-center mb-5">
-              <h5 class="fw-bold mb-3 d-inline-block px-4 py-2 bg-light rounded-pill border text-orange">Étape 1 : Création du ticket</h5>
+              <h5 class="fw-bold mb-3 d-inline-block px-4 py-2 bg-light rounded-pill border text-orange">Étape 1 : Prise de contact avec l'utilisateur</h5>
               <p class="text-secondary mx-auto mb-4" style="max-width: 700px;">
-                Création du ticket dans GLPI avec les détails de la demande d'assistance par l'utilisatrice Mme Marc.
+                L'utilisateur m'a contacté pour signaler que son PC s'allume mais ne démarre pas. J'ai recueilli des informations sur le problème, notamment les symptômes observés et les circonstances entourant la panne.
               </p>
-              <img src="assets\screen user request.png" alt="Screen User Request" class="img-fluid rounded border shadow-sm mx-auto d-block mb-4" style="max-height: 400px; object-fit: contain;">
+              <img src="assets\initial demand.png" alt="Screen User Request" class="img-fluid rounded border shadow-sm mx-auto d-block mb-4" style="max-height: 400px; object-fit: contain;">
             </div>
 
             <hr class="w-25 mx-auto text-muted mb-5">
 
             <!-- Etape 2 -->
             <div class="text-center mb-5">
-              <h5 class="fw-bold mb-3 d-inline-block px-4 py-2 bg-light rounded-pill border text-orange">Étape 2 : Assignation</h5>
+              <h5 class="fw-bold mb-3 d-inline-block px-4 py-2 bg-light rounded-pill border text-orange">Étape 2 : Première hypothèse</h5>
               <p class="text-secondary mx-auto mb-4" style="max-width: 700px;">
-                Assignation du ticket à un technicien compétent pour résoudre le problème, ici Technic John.
+                Après avoir recueilli les informations, j'ai formulé une première hypothèse sur la cause du problème : il pourrait s'agir d'un problème de démarrage lié à un composant matériel défaillant. Ma première idée était que la pile de BIOS devait être
+                plutôt agée car le PC n'avait jamais été ouvert même pour un dépoussiérage, ce qui pouvait causer des problèmes de démarrage. J'ai donc conseillé à l'utilisateur d'acheter une <strong>pile 3V CR2032</strong> d'après le modèle de son PC et se trouvant au Japon, 
+                je lui ai conseillé une superette
+                de quartier qui vendait ce type de pile pour qu'il puisse la récupérer rapidement et ainsi tester si le problème venait de là.
               </p>
-              <img src="assets/tech response 1.png" alt="Screen Assign Ticket" class="img-fluid rounded border shadow-sm mx-auto d-block mb-4" style="max-height: 400px; object-fit: contain;">
+              <img src="assets/first answer.png" alt="Screen Assign Ticket" class="img-fluid rounded border shadow-sm mx-auto d-block mb-4" style="max-height: 400px; object-fit: contain;">
             </div>
 
             <hr class="w-25 mx-auto text-muted mb-5">
-            
+
             <!-- Etape 3 -->
             <div class="text-center mb-5">
-              <h5 class="fw-bold mb-3 d-inline-block px-4 py-2 bg-light rounded-pill border text-orange">Étape 3 : Prise en charge et résolution</h5>
+              <h5 class="fw-bold mb-3 d-inline-block px-4 py-2 bg-light rounded-pill border text-orange">Étape 3 : Guidage pour le démontage de la pile</h5>
               <p class="text-secondary mx-auto mb-3" style="max-width: 700px;">
-                Le technicien John prend en charge le ticket, analyse le problème, et effectue les actions nécessaires pour résoudre l'incident, telles que redémarrer l'application, vérifier les ressources système, ou appliquer des correctifs.
+                Après avoir reçu une photo de l'ordinateur ouvert et de la pile, j'ai guidé l'utilisateur à travers les étapes pour remplacer la pile du BIOS. 
+                Je lui ai expliqué comment retirer l'ancienne pile et installer la nouvelle, en lui fournissant des instructions claires et des conseils de sécurité.
+                <img src="assets/following exchange.png" alt="Screen Assign Ticket" class="img-fluid rounded border shadow-sm mx-auto d-block mb-4" style="max-height: 400px; object-fit: contain;">
               </p>
               <div class="bg-light border rounded p-4 mx-auto text-start" style="max-width: 700px;">
                 <p class="text-secondary mb-0">
-                  <strong class="text-dark">La cause :</strong> Le problème vient du fait que l'application de comptabilité de Mme Marc était ouverte à plusieurs reprises, ce qui a provoqué un conflit de ressources et a fait que l'application ne répondait plus. Après avoir redémarré l'application et vérifié les ressources système, le technicien John a pu résoudre le problème et fermer le ticket une fois que Mme Marc a confirmé que l'application fonctionnait correctement.
+                  <strong class="text-dark">Dernière étape :</strong> Pour tester, aider avec les consignes de sécurité ( en l'occurence, ne pas toucher les composants avec des objets en métal et avant tout débrancher la batterie de l'ordinateur avec une quelconque manipulation )
+                  , j'ai demandé à l'utilisateur de m'appeler pour que je puisse l'assister en temps réel ( en France donc 11:39 et au Japon 19:39 ) 
+                  et ainsi vérifier que le problème venait bien de la pile du BIOS. Après le remplacement de la pile, l'utilisateur a pu redémarrer son PC sans problème, confirmant que la panne était due à une pile de BIOS défaillante.
                 </p>
+                <img src="assets/call.png" alt="Screen Assign Ticket" class="img-fluid rounded border shadow-sm mx-auto d-block mb-4" style="max-height: 400px; object-fit: contain;">
+                <p>Pour aider au démontage des composants nécessaires, j'ai fourni des instructions détaillées pendant l'appel ains que des tutoriels du site Ifixit avec le modèle de son ordinateur.</p>
+                <img src="assets/ifixit.png" alt="Screen Assign Ticket" class="img-fluid rounded border shadow-sm mx-auto d-block mb-4" style="max-height: 400px; object-fit: contain;">
+                <p>Grâce à ces instructions, l'utilisateur a pu remplacer la pile du BIOS avec succès et redémarrer son PC sans problème, confirmant que la panne était due à une pile de BIOS défaillante. L'appel s'est donc révélé efficace et s'est terminé peu après.</p>
               </div>
             </div>
 
@@ -237,22 +242,22 @@
 
             <!-- Etape 4 -->
             <div class="text-center">
-              <h5 class="fw-bold mb-3 d-inline-block px-4 py-2 bg-light rounded-pill border text-orange">Étape 4 : Clôture du ticket</h5>
+              <h5 class="fw-bold mb-3 d-inline-block px-4 py-2 bg-light rounded-pill border text-orange">Étape 4 : Suivi de réparation avec l'utilisateur</h5>
               <p class="text-secondary mx-auto mb-4" style="max-width: 700px;">
-                Le technicien John clôture le ticket dans GLPI, en indiquant les actions prises pour résoudre le problème et en notant que l'incident a été résolu avec succès. Ce que approuve Mme Marc, qui confirme que l'application fonctionne à nouveau sans problème.
+                Le lendemain suivant la réparation, j'ai contacté l'utilisateur brièvement pour m'assurer que le PC fonctionnait toujours correctement et au cas où procéder à des vérifications supplémentaires. 
+                Mais il m'a confirmé que tout fonctionnait parfaitement et que le problème avait été résolu.
               </p>
               <div class="d-flex flex-column flex-md-row justify-content-center gap-4 align-items-center">
-                <img src="assets/tech resolve.png" alt="Screen Tech Response" class="img-fluid rounded border shadow-sm" style="max-height: 350px; object-fit: contain;">
-                <img src="assets/solution approuved.png" alt="Screen Solution Approved" class="img-fluid rounded border shadow-sm" style="max-height: 350px; object-fit: contain;">
+                <img src="assets/SAV end.png" alt="SAV end" class="img-fluid rounded border shadow-sm" style="max-height: 400px; object-fit: contain;">
               </div>
             </div>
 
-          </div>
 
-        </div>
-      </div>
-    </div>
-  </section>
+        
+        
+        
+        
+        </section>
 
   <!-- Footer -->
   <footer class="bg-black text-secondary py-4 text-center small mt-auto">
