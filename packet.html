@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projet GLPI - Portfolio</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <style>
+    :root {
+      --accent: #f97316;
+      --accent-hover: #ea580c;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #fdfdfd;
+      color: #333;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    /* Custom Utilities */
+    .text-orange { color: var(--accent) !important; }
+    .bg-orange { background-color: var(--accent) !important; color: white; }
+
+    .btn-orange {
+      background-color: var(--accent);
+      color: white;
+      border: none;
+      border-radius: 4px;
+      padding: 0.75rem 1.5rem;
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+
+    .btn-orange:hover {
+      background-color: var(--accent-hover);
+      color: white;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(249, 115, 22, 0.2);
+    }
+
+    .btn-outline-orange {
+      border: 2px solid var(--accent);
+      color: var(--accent);
+      border-radius: 4px;
+      padding: 0.7rem 1.5rem;
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+
+    .btn-outline-orange:hover {
+      background-color: var(--accent);
+      color: white;
+    }
+
+    .section-title {
+      font-weight: 800;
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+      color: #111;
+    }
+
+    .section-label {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.15rem;
+      color: var(--accent);
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+
+    /* Cards */
+    .custom-card {
+      border: 1px solid #f0f0f0;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      background: white;
+    }
+
+    .custom-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    }
+    
+    .nav-pills .nav-link {
+      color: #555;
+      border-radius: 0;
+      border-bottom: 2px solid transparent;
+      padding: 0.5rem 1rem;
+      font-weight: 600;
+    }
+
+    .nav-pills .nav-link.active,
+    .nav-pills .nav-link:hover {
+      color: var(--accent);
+      background-color: transparent;
+      border-bottom: 2px solid var(--accent);
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Header / Navbar -->
+  <nav id="navbar" class="navbar navbar-expand-lg navbar-light bg-white sticky-top shadow-sm py-3">
+    <div class="container">
+      <a class="navbar-brand fw-bold fs-4" href="index.html">Port<span class="text-orange">folio</span></a>
+      <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav gap-3 text-uppercase" style="font-size: 0.85rem; font-weight: 600;">
+          <li class="nav-item"><a class="nav-link" href="index.html#about">Profil</a></li>
+          <li class="nav-item"><a class="nav-link" href="index.html#competences">Compétences</a></li>
+          <li class="nav-item"><a class="nav-link" href="index.html#epreuves">Épreuves</a></li>
+          <li class="nav-item"><a class="nav-link" href="index.html#projets">Projets</a></li>
+          <li class="nav-item"><a class="nav-link" href="index.html#stages">Stages</a></li>
+          <li class="nav-item"><a class="nav-link" href="index.html#contact">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section id="hero" class="d-flex align-items-center py-5"
+    style="background: linear-gradient(135deg, #fff 0%, #f7f9fa 100%);">
+    <div class="container py-5">
+      <div class="row align-items-center">
+        <div class="col-lg-8">
+          <span class="badge bg-light text-orange border border-orange mb-3 py-2 px-3 rounded-pill text-uppercase"
+            style="letter-spacing: 0.1em; font-size: 0.75rem;">
+            <span class="d-inline-block rounded-circle bg-orange me-2" style="width: 8px; height: 8px;"></span> TP / E5 / Packet Tracer / Emulation de réseau
+          </span>
+          <h1 class="display-3 fw-bolder mb-3 text-dark" style="letter-spacing: -0.03em;">Mise en place de <span
+              class="text-orange">CISCO Packet Tracer</span></h1>
+          <p class="lead text-muted mb-5" style="max-width: 600px; font-size: 1.1rem;">
+            Gestion d'un parc informatique avec Endpoints et différents réseaux dans le cadre du BTS SIO.
+          </p>
+          <div class="d-flex gap-3 flex-wrap">
+            <a href="index.html" class="btn btn-outline-orange">← Retour au portfolio</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Content Section (Central Layout) -->
+  <section class="py-5 flex-grow-1">
+    <div class="container">
+      <div class="row">
+        <!-- Content in a Central Column -->
+        <div class="col-lg-10 mx-auto">
+          
+          <div class="section-label text-center">Contexte</div>
+          <h2 class="section-title h3 mb-4 text-center">Présentation du projet</h2>
+          <p class="text-secondary lh-lg mb-4 text-center mx-auto" style="max-width: 800px;">
+            Danse le cadre de ma formation en BTS SIO, j'ai pu réaliser au travers de plusieurs TP, plusieurs réseaux suivant différentes architectures et simulant donc différentes topologies et configurations.
+          </p>
+          <p class="text-secondary lh-lg mb-5 text-center mx-auto" style="max-width: 800px;">
+            L'utilisation de Cisco Packet Tracer m'a permis de créer des réseaux virtuels complexes, 
+            d'ajouter des équipements tels que des routeurs, des commutateurs, et des ordinateurs, 
+            et de configurer les paramètres réseau pour simuler des scénarios réels. 
+            J'ai pu expérimenter avec différentes configurations de réseau, telles que les VLANs, les protocoles de routage, et les services réseau, 
+            afin de comprendre comment les réseaux fonctionnent et comment résoudre les problèmes qui peuvent survenir dans un environnement informatique.
+            <br><br>
+            Tous les réseaux présentés dans ce projet ont été créées et configurés par mes soins lors de mon année de BTS via les travaux dirigés et travaux pratiques réalisés lors de ma formation.
+            De ce fait, plusieurs réseaux ont été créés, configurés et mis en place pour pouvoir simuler différentes topologies et ainsi comprendre différentes notions liées à la gestion d'un parc informatique, 
+            telles que la segmentation de réseau, la gestion d'adresses IP, la configuration de routeurs et de commutateurs, les types d'ACL (Access Control List), 
+            ainsi que l'attribution en fonction des besoins de commutateurs  de couche 2 ou 3 ainsi que leur utilité.
+          </p>
+
+          <div class="section-label text-center mt-5 pt-3">TP1 : Prise en main de Packet Tracer</div>
+          <h2 class="section-title h3 mb-5 text-center">Travail Pratique prise en main de Packet Tracer</h2>
+          
+          <!-- CENTRAL BUBBLE FOR STEPS -->
+          <div class="custom-card p-4 p-md-5 mb-5 shadow-sm">
+            
+            <!-- Context -->
+            <div class="text-center mb-5">
+              <h5 class="fw-bold mb-3 d-inline-block px-4 py-2 bg-light rounded-pill border text-orange">Réseau simple avec commutateurs, ordinateurs et routeurs.</h5>
+              <div class="bg-light border rounded p-4 mx-auto text-start" style="max-width: 650px;">
+                <p class="text-dark mb-2"><strong>TP :</strong> Prise en main de Packet Tracer</p>
+                <p class="text-secondary mb-0"><strong>Description :</strong> Création et configuration d'un réseau simple avec des équipements de base.</p>
+              </div>
+            </div>
+
+            <hr class="w-25 mx-auto text-muted mb-5">
+
+            <!-- Etape 1 -->
+            <div class="text-center mb-5">
+              <h5 class="fw-bold mb-3 d-inline-block px-4 py-2 bg-light rounded-pill border text-orange">Étape 1 : Création du réseau</h5>
+              <p class="text-secondary mx-auto mb-4" style="max-width: 700px;">
+                Création du réseau simple avec des deux commutateurs, quatre ordinateurs et deux routeurs.
+              </p>
+              <img src="assets\TP1schema.png" alt="Screen User Request" class="img-fluid rounded border shadow-sm mx-auto d-block mb-4" style="max-height: 400px; object-fit: contain;">
+            </div>
+
+            <hr class="w-25 mx-auto text-muted mb-5">
+
+            <!-- Etape 2 -->
+            <div class="text-center mb-5">
+              <h5 class="fw-bold mb-3 d-inline-block px-4 py-2 bg-light rounded-pill border text-orange">Étape 2 : configuration des équipements</h5>
+              <p class="text-secondary mx-auto mb-4" style="max-width: 700px;">
+                Configuration des commutateurs, ordinateurs et routeurs pour assurer la communication entre les différents appareils.
+                Impliquant donc la configuration d'adresses IP et de passerelles par défaut ( ici l'adresse IP des routeurs correspondants aux interfaces connectées ) pour pouvoir assurer la communication entre les différents appareils du réseau.
+              </p>
+              <img src="assets/TP1config.png" alt="Screen Assign Ticket" class="img-fluid rounded border shadow-sm mx-auto d-block mb-4" style="max-height: 400px; object-fit: contain;">
+            </div>
+
+            <hr class="w-25 mx-auto text-muted mb-5">
+            
+            <!-- Etape 3 -->
+            <div class="text-center mb-5">
+              <h5 class="fw-bold mb-3 d-inline-block px-4 py-2 bg-light rounded-pill border text-orange">Étape 3 : Test de la configuration</h5>
+              <p class="text-secondary mx-auto mb-3" style="max-width: 700px;">
+                Test de la configuration pour s'assurer que tous les équipements communiquent correctement.
+                Ici le test s'effectue entre le PC0 et le PC3, qui sont connectés à des commutateurs différents, eux même connectés à des routeurs différents, 
+                ce qui implique que pour que la communication puisse s'effectuer entre les deux PC, il faut que les routeurs soient correctement configurés pour pouvoir faire transiter les données entre les deux réseaux.
+              </p>
+              <img src="assets/TP1PConnect.png" alt="Screen Assign Ticket" class="img-fluid rounded border shadow-sm mx-auto d-block mb-4" style="max-height: 400px; object-fit: contain;">
+              <div class="bg-light border rounded p-4 mx-auto text-start" style="max-width: 700px;">
+                <p class="text-secondary mb-0">
+                  <strong class="text-dark">Résultat :</strong> Le test de communication entre le PC0 et le PC3 est réussi, indiquant que la configuration du réseau est correcte et que les équipements communiquent correctement.
+                <img src="assets/TP1Ping.png" alt="Screen Assign Ticket" class="img-fluid rounded border shadow-sm mx-auto d-block mb-4" style="max-height: 400px; object-fit: contain;">
+                </p>
+              </div>
+            </div>
+
+            <hr class="w-25 mx-auto text-muted mb-5">
+
+          </div>
+
+          <div class="section-label text-center mt-5 pt-3">TP2 : Réseau avec VLANs et ACLs</div>
+          <h2 class="section-title h3 mb-5 text-center">Travail Pratique sur les VLANs et ACLs</h2>
+
+          <!-- CENTRAL BUBBLE FOR STEPS -->
+          <div class="custom-card p-4 p-md-5 mb-5 shadow-sm">
+            
+            <!-- Context -->
+            <div class="text-center mb-5">
+              <h5 class="fw-bold mb-3 d-inline-block px-4 py-2 bg-light rounded-pill border text-orange">Réseau multi-sites, principes ACL, routage OSPF, Services DHCP et DNS.</h5>
+              <div class="bg-light border rounded p-4 mx-auto text-start" style="max-width: 650px;">
+                <p class="text-dark mb-2"><strong>TP :</strong> Installation réseau intranet avec configuration de VLANs et ACLs.</p>
+                <p class="text-secondary mb-0"><strong>Description :</strong> Création et configuration d'un réseau avec serveur DHCP et DNS.</p>
+              </div>
+            </div>
+
+            <hr class="w-25 mx-auto text-muted mb-5">
+
+            <!-- Etape 1 -->
+            <div class="text-center mb-5">
+              <h5 class="fw-bold mb-3 d-inline-block px-4 py-2 bg-light rounded-pill border text-orange">Étape 1 : Création du réseau</h5>
+              <p class="text-secondary mx-auto mb-4" style="max-width: 700px;">
+                Création du réseau avec des deux commutateurs, trois ordinateurs et trois routeurs.
+              </p>
+              <img src="assets\schemaTP2.png" alt="Screen User Request" class="img-fluid rounded border shadow-sm mx-auto d-block mb-4" style="max-height: 400px; object-fit: contain;">
+              <p>
+                Le réseau est composé de trois routeurs ( Siège, FAI et Succursale ) connectés entre eux, 
+                avec des commutateurs connectés à chaque routeur, et des ordinateurs connectés à ces commutateurs. 
+                Tous les commutateurs et les routeurs sont configurés pour permettre la communication entre les différents appareils du réseau, pour pouvoir isoler chaque VLAN. Pour l'instant aucune mise en place de protocoles DHCP n'a
+                été effectuée, les adresses IP sont donc configurées manuellement sur chaque appareil du réseau pour pouvoir assurer la communication entre les différents appareils du réseau.
+              </p>
+              <img src="assets/routerHQ.png" alt="Screen Assign Ticket" class="img-fluid rounded border shadow-sm mx-auto d-block mb-4" style="max-height: 400px; object-fit: contain;">
+              <p>
+                De plus, sur le switch lié au routeur, le port trunk a été configuré sur le VLAN 99 ( initialement VLAN 1 ), pour éviter les attagques par double marquage.
+              </p>
+              <img src="assets/switchHQ.png" alt="Screen Assign Ticket" class="img-fluid rounded border shadow-sm mx-auto d-block mb-4" style="max-height: 400px; object-fit: contain;">
+            </div>
+
+            <hr class="w-25 mx-auto text-muted mb-5">
+
+            <!-- Etape 2 -->
+            <div class="text-center mb-5">
+              <h5 class="fw-bold mb-3 d-inline-block px-4 py-2 bg-light rounded-pill border text-orange">Étape 2 : Routage dynamique</h5>
+              <p class="text-secondary mx-auto mb-4" style="max-width: 700px;">
+                Dans un premier temps chaque routeur a eu une adresse IP configurée sur chaque interface connectée à un autre routeur ou à un commutateur, pour pouvoir assurer la communication entre les différents appareils du réseau.
+                Puis le protocole de routage dynamique OSPF a été configuré sur les trois routeurs du réseau, pour permettre la communication entre les différents réseaux connectés à chaque routeur.
+              </p>
+              <img src="assets/OSPFRBranch.png" alt="Screen Assign Ticket" class="img-fluid rounded border shadow-sm mx-auto d-block mb-4" style="max-height: 400px; object-fit: contain;">
+              <img src="assets/OSPFRFAI.png" alt="Screen Assign Ticket" class="img-fluid rounded border shadow-sm mx-auto d-block mb-4" style="max-height: 400px; object-fit: contain;">
+              <img src="assets/OSPRHQ.png" alt="Screen Assign Ticket" class="img-fluid rounded border shadow-sm mx-auto d-block mb-4" style="max-height: 400px; object-fit: contain;">
+            </div>
+
+            <hr class="w-25 mx-auto text-muted mb-5">
+            
+            <!-- Etape 3 -->
+            <div class="text-center mb-5">
+              <h5 class="fw-bold mb-3 d-inline-block px-4 py-2 bg-light rounded-pill border text-orange">Étape 3 : Installation du serveur et configuration intranet</h5>
+              <p class="text-secondary mx-auto mb-3" style="max-width: 700px;">
+                Avant l'installation du serveur DHCP, il faut pouvoir configurer et préparer la zone serveur. C'est à dire, le switch et le routeur du siège sur la VLAN 30.
+              </p>
+              <img src="assets/SW HQ.png" alt="Screen Assign Ticket" class="img-fluid rounded border shadow-sm mx-auto d-block mb-4" style="max-height: 400px; object-fit: contain;">
+              <img src="assets/modif router hq.png" alt="Screen Assign Ticket" class="img-fluid rounded border shadow-sm mx-auto d-block mb-4" style="max-height: 400px; object-fit: contain;">
+                Installation d'un serveur DHCP relié au switch du siège, pour permettre l'attribution automatique d'adresses IP aux appareils connectés à ce switch.
+                Les services HTTP et DNS ont également été configurés sur le serveur pour permettre l'accès à l'intranet de l'entreprise via un nom de domaine personnalisé ( intranet.sio.local ) au lieu d'une adresse IP.
+                Cette configuration comprend le fait que le siège de l'entreprise soit le lieu où se trouve le serveur DHCP, qui attribue automatiquement une adresse IP unique à chaque appareil connecté au switch du siège.
+                Deux pools d'adresses IP ont été configurées sur le serveur. Un première pour les adresses de direction et une deuxième pour les adresses de la comptabilité. Le choix a été fait de ne pas créer de pool pour la succursale
+                pour pouvoir configurer différemment les adresses IP manuellement et donc vérifier que le PC vendeur communique correctement en renseignant une adresse DNS manuellement.
+              </p>
+              <img src="assets/DHCP siege.png" alt="Screen Assign Ticket" class="img-fluid rounded border shadow-sm mx-auto d-block mb-4" style="max-height: 400px; object-fit: contain;">
+              <p>
+                Enfin, les ordinateurs des deux sites ont été configurés pour pouvoir communiquer avec le serveur DHCP du siège et surtout pour pouvoir récupérer l'adresse DNS et accéder à l'intranet de l'entreprise.
+              </p>
+              <img src="assets/modif pc siège.png" alt="Screen Assign Ticket" class="img-fluid rounded border shadow-sm mx-auto d-block mb-4" style="max-height: 400px; object-fit: contain;">
+              <img src="assets/modif dns pc vendeur.png" alt="Screen Assign Ticket" class="img-fluid rounded border shadow-sm mx-auto d-block mb-4" style="max-height: 400px; object-fit: contain;">
+              <div class="bg-light border rounded p-4 mx-auto text-start" style="max-width: 700px;">
+                <p class="text-secondary mb-0">
+                  <strong class="text-dark">Résultat :</strong> Tous les PC sur les deux sites peuvent accéder à l'intranet de l'entreprise et les pc du siège ont leur adresse IP attribuée automatiquement par le serveur DHCP, tandis que le PC vendeur de la succursale a une adresse IP configurée manuellement.
+                <img src="assets/intranetDNS.png" alt="Screen Assign Ticket" class="img-fluid rounded border shadow-sm mx-auto d-block mb-4" style="max-height: 400px; object-fit: contain;">
+                </p>
+              </div>
+            </div>
+
+            <hr class="w-25 mx-auto text-muted mb-5">
+
+            <!-- Etape 4 -->
+            <div class="text-center mb-5">
+              <h5 class="fw-bold mb-3 d-inline-block px-4 py-2 bg-light rounded-pill border text-orange">Étape 4 : Sécurisation et NAT</h5>
+              <p class="text-secondary mx-auto mb-4" style="max-width: 700px;">
+                Pour simuler une connexion à Internet, le routeur FAI a été configuré pour faire du NAT (Network Address Translation) et permettre aux appareils du réseau de communiquer avec l'extérieur.
+                L'adresse IP publique attribuée au routeur FAI pour la simulation de la connexion à Internet est : 8.8.8.8 255.255.255.255
+              </p>
+              <img src="assets/ip routeur fai.png" alt="Screen Assign Ticket" class="img-fluid rounded border shadow-sm mx-auto d-block mb-4" style="max-height: 400px; object-fit: contain;">
+              <p>
+                Par la suite, les interfaces internes (LAN) et externes (WAN) du routeur du siège permettant ainsi que les connexions soient définies et sécurisées en conséquence.
+              </p>
+              <img src="assets/modif nat routeur siege.png" alt="Screen Assign Ticket" class="img-fluid rounded border shadow-sm mx-auto d-block mb-4" style="max-height: 400px; object-fit: contain;">
+              <p>
+                Ensuite, une ACL (Access Control Lists) étendue a été configurée sur le routeur du siège pour contrôler l'accès aux ressources du réseau.
+                Ici pour une question de commodité, une seule ACL a été configurée. La règle SECU_COMPTA permettant que la comptabilité ( VLAN 20 ) puisse accéder à l'intranet ou Internet soit accessible 
+                mais pas que celle-ci n'ait accès à la direction ( VLAN 10 ).
+              </p>
+              <img src="assets/deny compta direction ACL Extended.png" alt="Screen Assign Ticket" class="img-fluid rounded border shadow-sm mx-auto d-block mb-4" style="max-height: 400px; object-fit: contain;">
+              <div class="bg-light border rounded p-4 mx-auto text-start" style="max-width: 700px;">
+                <p class="text-secondary mb-0">
+                  <strong class="text-dark">Résultat :</strong> Le PC Compta peut accéder à Internet et l'intranet, mais le ping vers le PC Direction est bloqué, indiquant que l'ACL fonctionne correctement et que les règles de sécurité sont appliquées comme prévu.
+                <img src="assets/ping compta ACL.png" alt="Screen Assign Ticket" class="img-fluid rounded border shadow-sm mx-auto d-block mb-4" style="max-height: 400px; object-fit: contain;">
+                </p>
+              </div>
+              <p>
+                Enfin, pour permette d'avoir un meilleur contrôle des ports sur le switch du siège au niveau de la direction. 
+                Le port du switch du siège auquel est connecté le PC de la direction a été configuré en port sécurisé, pour permettre uniquement l'accès à ce port à l'adresse MAC du PC de la direction, 
+                et ainsi éviter que d'autres appareils puissent se connecter à ce port et potentiellement accéder aux ressources de la direction.
+                Trois politique de Port Security ont donc été configurées.
+                La première n'autorisant qu'une seule adresse MAC à se connecter au port.
+                La seconde enregistrant l'adresse MAC du PC de la direction pour permettre uniquement à ce PC de se connecter au port. Paramètre sticky.
+                La troisième configurant une violation de type shutdown, pour désactiver le port en cas de tentative de connexion d'un appareil non autorisé.
+              </p>
+              <img src="assets/secu port switch direction.png" alt="Screen Assign Ticket" class="img-fluid rounded border shadow-sm mx-auto d-block mb-4" style="max-height: 400px; object-fit: contain;">
+
+            </div>
+
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-black text-secondary py-4 text-center small mt-auto">
+  <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center gap-2">
+    <span>© 2026 · Mat PINEAU · Portfolio BTS SIO SLAM</span>
+      <span>Tous droits réservés</span>
+  </div>
+</footer>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
